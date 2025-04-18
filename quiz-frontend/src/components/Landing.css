@@ -1,0 +1,27 @@
+.landing-bg {
+    background: linear-gradient(to bottom right, #0d1117, #1c1c1c);
+    min-height: 100vh;
+  }
+  
+  .hero-img {
+    animation: float 4s ease-in-out infinite;
+    max-height: 350px;
+    margin-top: 20px;
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+  }
+  
+  .card {
+    border-radius: 1rem;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  }
+  

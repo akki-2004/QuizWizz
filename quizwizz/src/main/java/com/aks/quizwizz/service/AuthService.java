@@ -1,7 +1,7 @@
 package com.aks.quizwizz.service;
 
+import com.aks.quizwizz.DTO.UserDTO;
 import com.aks.quizwizz.model.User;
-import com.aks.quizwizz.service.UserRepository;
 import com.aks.quizwizz.security.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -12,22 +12,24 @@ import java.util.Optional;
 public class AuthService {
     @Autowired
     private UserRepository userRepository;
-    
+
     @Autowired
     private PasswordEncoder passwordEncoder;
 
     @Autowired
     private JwtUtil jwtUtil;
 
-    public String register(User user) {
-        if (userRepository.findByUsername(user.getUsername()).isPresent()) {
+    public String register(com.aks.quizwizz.DTO.UserDTO userDTO) {
+        if (userRepository.findByUsername(userDTO.getUsername()).isPresent()) {
             return "User already exists!";
         }
 
-        // Hash password before saving
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        userRepository.save(user);
+        User user = new User();
+        user.setUsername(userDTO.getUsername());
+        user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
+        user.setRole("STUDENT");
 
+        userRepository.save(user);
         return "User registered successfully!";
     }
 
@@ -40,15 +42,15 @@ public class AuthService {
         }
     
         User user = userOpt.get();
-        System.out.println("🔹 Stored Hashed Password: " + user.getPassword());
-        System.out.println("🔹 Entered Password: " + password);
     
         if (!passwordEncoder.matches(password, user.getPassword())) {
-            System.out.println("❌ Password does not match");
+            System.out.println("❌ Invalid password for: " + username);
             return null;
         }
     
-        return jwtUtil.generateToken(username);
+        // ✅ Always returns a String
+        return jwtUtil.generateToken(username, user.getRole());
+
     }
     
 }

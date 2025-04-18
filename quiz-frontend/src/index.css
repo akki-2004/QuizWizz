@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/* index.css - Dark Theme Styles */
+
+body {
+  background-color: #121212;
+  color: #f0f0f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #90caf9;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #bbdefb;
+}
+
+.btn-primary {
+  background-color: #1f88e5;
+  border-color: #1f88e5;
+}
+
+.btn-primary:hover {
+  background-color: #1565c0;
+  border-color: #1565c0;
+}
+
+.card {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  color: #f0f0f0;
+}
+
+.navbar {
+  background-color: #212121;
+}
+
+.navbar-brand,
+.nav-link {
+  color: #f0f0f0 !important;
+}
+
+input, select, textarea {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border: 1px solid #444;
+}
+
+input::placeholder {
+  color: #aaa;
+}
