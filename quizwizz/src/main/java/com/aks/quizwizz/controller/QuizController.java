@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @CrossOrigin(origins = "https://quiz-wizz-front.vercel.app", allowCredentials = "true")
 
-@PreAuthorize("hasRole('ADMIN')")
+
 @RestController
 @RequestMapping("/quiz")
 public class QuizController {
