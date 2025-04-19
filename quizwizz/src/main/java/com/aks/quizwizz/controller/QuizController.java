@@ -22,7 +22,8 @@ import com.aks.quizwizz.model.ScoreRequest;
 import com.aks.quizwizz.service.QuizService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://quiz-wizz-front.vercel.app", allowCredentials = "true")
+
 @PreAuthorize("hasRole('ADMIN')")
 @RestController
 @RequestMapping("/quiz")
@@ -52,4 +53,5 @@ public ResponseEntity<Integer> getScore(@RequestBody ScoreRequest request) {
 }
 
 }
+
 

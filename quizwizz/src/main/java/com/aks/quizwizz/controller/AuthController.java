@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://quiz-wizz-front.vercel.app", allowCredentials = "true")
+
 @RestController
 @RequestMapping("/auth")
 public class AuthController {

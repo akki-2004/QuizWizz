@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://quiz-wizz-front.vercel.app", allowCredentials = "true")
+
 @RestController
 @RequestMapping("/question")
 public class QuestionController {
