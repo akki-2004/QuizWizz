@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: quizwizz-backend
+    env: java
+    plan: free
+    buildCommand: ./mvnw clean install
+    startCommand: java -jar target/*.jar
+    rootDir: quizwizz
+    envVars:
+      - key: MONGODB_URI
+        value: your-mongo-uri-here
+      - key: JWT_SECRET
+        value: your-jwt-secret-here
