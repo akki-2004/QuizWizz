@@ -12,5 +12,8 @@ import com.aks.quizwizz.model.Questions;
 public interface QuestionDOA extends JpaRepository<Questions,Integer>{
     List<Questions> findByCategory(String category);
     @Query(value="SELECT * FROM questions WHERE category=:category ORDER BY RAND() LIMIT :num",nativeQuery=true)
-    List<Questions> findRandom5ByCategory( String category,int num);
+    // @Query(value="SELECT * FROM questions WHERE category=:category ORDER BY RAND() LIMIT :num", nativeQuery=true)
+    List<Questions> findRandom5ByCategory(@org.springframework.data.repository.query.Param("category") String category,
+                                          @org.springframework.data.repository.query.Param("num") int num);
+    
 }
