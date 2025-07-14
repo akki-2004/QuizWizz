@@ -54,7 +54,7 @@ This project does not specify a license, so the default copyright applies. Pleas
 
 For any inquiries or feedback, please reach out to the project maintainer:
 
-- **Email**: [your-email@example.com](mailto:your-email@example.com)
+- **Email**: [your-email@example.com](mailto:naniakshay361@gmail.com)
 - **GitHub**: [akki-2004](https://github.com/akki-2004)
 
 ---
